@@ -1,0 +1,13 @@
+git clone --branch stable-5 https://github.com/minetest/minetest/
+
+
+# client
+cmake . -DRUN_IN_PLACE=TRUE
+make -j$(nproc)
+
+
+# server 
+cmake . -DBUILD_SERVER=TRUE
+make -j$(nproc)
+
+delete delete CMakeCache.txt if you want to try something different.

@@ -1,0 +1,5 @@
+# on vps
+0 */6 * * * /home/yrungr/bin/minetestbackup
+
+# on local machine
+10 */6 * * * rsync -v -e 'ssh' valhalla:/var/www/html/minetest/* /home/user/minetest_backups/

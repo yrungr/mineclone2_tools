@@ -1,0 +1,5 @@
+# vps
+0 */4 * * * /bin/sh /home/yrungr/minetest_mineclone2/bin/backup.sh
+
+# local
+10 */4 * * * rsync -v --ignore-existing -e 'ssh' valhalla:/home/yrungr/minetest_backups/* /home/user/minetest_backups/

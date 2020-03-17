@@ -2,6 +2,6 @@
 
 executable="/home/yrungr/minetest-stable/bin/minetestserver"
 configfile="/home/yrungr/minetest_mineclone2/mineclone2.conf"
-logfile="/var/www/html/mineclone2.txt"
+logfile="/home/yrungr/mineclone2.log"
 
 $executable --config $configfile --logfile $logfile

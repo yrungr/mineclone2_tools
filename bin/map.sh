@@ -1,5 +1,15 @@
 #!/bin/sh
 
+executable='/home/mineclone2/minetestmapper/minetestmapper'
+mapfile='/var/www/html/mineclone2_map/map.png'
+colorfile='/home/mineclone2/minetestmapper/mineclone2mapper/colors.txt'
+
+# clear old files from /tmp
+while [ -f /tmp/map.sqlite ]
+do
+	rm /tmp/map.sqlite
+done
+
 # copy files to /tmp
 while [ ! -f /tmp/map.sqlite ]
 do
@@ -8,4 +18,4 @@ done
 cp /home/mineclone2/.minetest/worlds/mineclone2/world.mt /tmp
 
 # generate map
-/home/mineclone2/minetestmapper/minetestmapper -i /tmp/ -o /var/www/html/mineclone2_map/map.png --colors /home/mineclone2/minetestmapper/mineclone2mapper/colors.txt --zoom 1
+$executable -i /tmp/ -o $mapfile --colors $colorfile --zoom 1

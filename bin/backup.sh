@@ -7,7 +7,7 @@ cd /home/mineclone2/.minetest/worlds
 if [ -d "backup" ]; then
 	rm -rf backup
 fi
-	mkdir backup
+mkdir backup
 
 # copy everything except the sqlite files
 rsync -avr --exclude='auth.sqlite' --exclude='players.sqlite' --exclude='map.sqlite' mineclone2/ backup

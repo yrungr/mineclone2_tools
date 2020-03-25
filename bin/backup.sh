@@ -25,7 +25,7 @@ do
 		echo $(date '+%Y/%m/%d %H:%M:%S')" backup complete" >> $logfile
 		backup='true'
 	else
-		echo $(date '+%Y/%m/%d %H:%M:%S')" backup failed" >> $logfile
+		echo $(date '+%Y/%m/%d %H:%M:%S')" backup failed, retrying" >> $logfile
 	fi
 done
 
@@ -38,7 +38,7 @@ do
 		echo $(date '+%Y/%m/%d %H:%M:%S')" backup complete" >> $logfile
 		backup='true'
 	else
-		echo $(date '+%Y/%m/%d %H:%M:%S')" backup failed" >> $logfile
+		echo $(date '+%Y/%m/%d %H:%M:%S')" backup failed, retrying" >> $logfile
 	fi
 done
 
@@ -51,7 +51,7 @@ do
 		echo $(date '+%Y/%m/%d %H:%M:%S')" backup complete" >> $logfile
 		backup='true'
 	else
-		echo $(date '+%Y/%m/%d %H:%M:%S')" backup failed" >> $logfile
+		echo $(date '+%Y/%m/%d %H:%M:%S')" backup failed, retrying" >> $logfile
 	fi
 done
 

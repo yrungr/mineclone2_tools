@@ -11,10 +11,18 @@ do
 done
 
 # copy files to /tmp
-while [ ! -f /tmp/map.sqlite ]
+backup='false'
+while [ $backup = 'false' ]
 do
-	sqlite3 /home/mineclone2/.minetest/worlds/mineclone2/map.sqlite ".backup /tmp/map.sqlite"
+	if /home/mineclone2/.minetest/worlds/mineclone2/map.sqlite ".backup /tmp/map.sqlite"
+	then
+		echo $(date '+%Y/%m/%d %H:%M:%S')" backup complete" >> $logfile
+		backup='true'
+	else
+		echo $(date '+%Y/%m/%d %H:%M:%S')" backup failed, retrying" >> $logfile
+	fi
 done
+
 cp /home/mineclone2/.minetest/worlds/mineclone2/world.mt /tmp
 
 # generate map
